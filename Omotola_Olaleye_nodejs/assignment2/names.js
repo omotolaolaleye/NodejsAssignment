@@ -15,15 +15,15 @@ const router = async function (req, res) {
         output: process.stdout,
       });
       readline.question(
-        "Enter a name you will like to be saved?",
+        "Input a name you want to be saved?",
         function(yourName)  {
-          console.log(` ${yourName} has been added to the array!`);
+          console.log(` ${yourName} added successfully!`);
           arr.push(yourName);
           readline.close();
         }
       );
 
-      let body = "Go the the command line to enter a name";
+      let body = "Enter a name";
       res.writeHead(200, { "Content-Type": "application/json" });
       //send response
       res.end(JSON.stringify(body));
